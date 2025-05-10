@@ -1,0 +1,731 @@
+[
+    {
+        "contestId": 1921,
+        "contestName": "Codeforces Round 920 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 18633,
+        "ratingUpdateTimeSeconds": 1705337400,
+        "oldRating": 0,
+        "newRating": 383
+    },
+    {
+        "contestId": 1922,
+        "contestName": "Educational Codeforces Round 161 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 14367,
+        "ratingUpdateTimeSeconds": 1705595700,
+        "oldRating": 383,
+        "newRating": 730
+    },
+    {
+        "contestId": 1918,
+        "contestName": "Codeforces Round 922 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 17675,
+        "ratingUpdateTimeSeconds": 1706633100,
+        "oldRating": 730,
+        "newRating": 861
+    },
+    {
+        "contestId": 1931,
+        "contestName": "Codeforces Round 925 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 17208,
+        "ratingUpdateTimeSeconds": 1707843000,
+        "oldRating": 861,
+        "newRating": 937
+    },
+    {
+        "contestId": 1929,
+        "contestName": "Codeforces Round 926 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 14817,
+        "ratingUpdateTimeSeconds": 1708014900,
+        "oldRating": 937,
+        "newRating": 968
+    },
+    {
+        "contestId": 1930,
+        "contestName": "think-cell Round 1",
+        "handle": "Alpha_04.",
+        "rank": 8050,
+        "ratingUpdateTimeSeconds": 1708191300,
+        "oldRating": 968,
+        "newRating": 1011
+    },
+    {
+        "contestId": 1932,
+        "contestName": "Codeforces Round 927 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 12782,
+        "ratingUpdateTimeSeconds": 1708266000,
+        "oldRating": 1011,
+        "newRating": 957
+    },
+    {
+        "contestId": 1926,
+        "contestName": "Codeforces Round 928 (Div. 4)",
+        "handle": "Alpha_04.",
+        "rank": 12772,
+        "ratingUpdateTimeSeconds": 1708361400,
+        "oldRating": 957,
+        "newRating": 961
+    },
+    {
+        "contestId": 1923,
+        "contestName": "Educational Codeforces Round 162 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 11136,
+        "ratingUpdateTimeSeconds": 1708706100,
+        "oldRating": 961,
+        "newRating": 945
+    },
+    {
+        "contestId": 1933,
+        "contestName": "Codeforces Round 929 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 13478,
+        "ratingUpdateTimeSeconds": 1709052600,
+        "oldRating": 945,
+        "newRating": 953
+    },
+    {
+        "contestId": 1937,
+        "contestName": "Codeforces Round 930 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 12879,
+        "ratingUpdateTimeSeconds": 1709224500,
+        "oldRating": 953,
+        "newRating": 888
+    },
+    {
+        "contestId": 1934,
+        "contestName": "Codeforces Round 931 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 13478,
+        "ratingUpdateTimeSeconds": 1709310900,
+        "oldRating": 888,
+        "newRating": 835
+    },
+    {
+        "contestId": 1935,
+        "contestName": "Codeforces Round 932 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 10718,
+        "ratingUpdateTimeSeconds": 1709656500,
+        "oldRating": 835,
+        "newRating": 903
+    },
+    {
+        "contestId": 1945,
+        "contestName": "Codeforces Round 935 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 7770,
+        "ratingUpdateTimeSeconds": 1710843600,
+        "oldRating": 903,
+        "newRating": 907
+    },
+    {
+        "contestId": 1950,
+        "contestName": "Codeforces Round 937 (Div. 4)",
+        "handle": "Alpha_04.",
+        "rank": 15447,
+        "ratingUpdateTimeSeconds": 1711645200,
+        "oldRating": 907,
+        "newRating": 908
+    },
+    {
+        "contestId": 1942,
+        "contestName": "CodeTON Round 8 (Div. 1 + Div. 2, Rated, Prizes!)",
+        "handle": "Alpha_04.",
+        "rank": 8737,
+        "ratingUpdateTimeSeconds": 1711820100,
+        "oldRating": 908,
+        "newRating": 903
+    },
+    {
+        "contestId": 1957,
+        "contestName": "Codeforces Round 940 (Div. 2) and CodeCraft-23",
+        "handle": "Alpha_04.",
+        "rank": 10727,
+        "ratingUpdateTimeSeconds": 1713718200,
+        "oldRating": 903,
+        "newRating": 879
+    },
+    {
+        "contestId": 1966,
+        "contestName": "Codeforces Round 941 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8853,
+        "ratingUpdateTimeSeconds": 1714235700,
+        "oldRating": 879,
+        "newRating": 830
+    },
+    {
+        "contestId": 1969,
+        "contestName": "Educational Codeforces Round 165 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8230,
+        "ratingUpdateTimeSeconds": 1714408500,
+        "oldRating": 830,
+        "newRating": 873
+    },
+    {
+        "contestId": 1972,
+        "contestName": "Codeforces Round 942 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 7094,
+        "ratingUpdateTimeSeconds": 1714496700,
+        "oldRating": 873,
+        "newRating": 915
+    },
+    {
+        "contestId": 1968,
+        "contestName": "Codeforces Round 943 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 8271,
+        "ratingUpdateTimeSeconds": 1714669200,
+        "oldRating": 915,
+        "newRating": 962
+    },
+    {
+        "contestId": 1973,
+        "contestName": "Codeforces Round 945 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 10434,
+        "ratingUpdateTimeSeconds": 1715963700,
+        "oldRating": 962,
+        "newRating": 942
+    },
+    {
+        "contestId": 1974,
+        "contestName": "Codeforces Round 946 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 15522,
+        "ratingUpdateTimeSeconds": 1716223800,
+        "oldRating": 942,
+        "newRating": 905
+    },
+    {
+        "contestId": 1976,
+        "contestName": "Educational Codeforces Round 166 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 10352,
+        "ratingUpdateTimeSeconds": 1717086900,
+        "oldRating": 905,
+        "newRating": 957
+    },
+    {
+        "contestId": 1981,
+        "contestName": "Codeforces Round 949 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 7868,
+        "ratingUpdateTimeSeconds": 1717157100,
+        "oldRating": 957,
+        "newRating": 963
+    },
+    {
+        "contestId": 1980,
+        "contestName": "Codeforces Round 950 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 18531,
+        "ratingUpdateTimeSeconds": 1717433400,
+        "oldRating": 963,
+        "newRating": 932
+    },
+    {
+        "contestId": 1982,
+        "contestName": "Codeforces Round 955 (Div. 2, with prizes from NEAR!)",
+        "handle": "Alpha_04.",
+        "rank": 12735,
+        "ratingUpdateTimeSeconds": 1719333300,
+        "oldRating": 932,
+        "newRating": 909
+    },
+    {
+        "contestId": 1989,
+        "contestName": "Educational Codeforces Round 167 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6899,
+        "ratingUpdateTimeSeconds": 1719506100,
+        "oldRating": 909,
+        "newRating": 1009
+    },
+    {
+        "contestId": 1987,
+        "contestName": "EPIC Institute of Technology Round Summer 2024 (Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 5929,
+        "ratingUpdateTimeSeconds": 1719768900,
+        "oldRating": 1009,
+        "newRating": 1087
+    },
+    {
+        "contestId": 1992,
+        "contestName": "Codeforces Round 957 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 13967,
+        "ratingUpdateTimeSeconds": 1720716600,
+        "oldRating": 1087,
+        "newRating": 1055
+    },
+    {
+        "contestId": 1994,
+        "contestName": "Codeforces Round 959 sponsored by NEAR (Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8876,
+        "ratingUpdateTimeSeconds": 1721320500,
+        "oldRating": 1055,
+        "newRating": 1058
+    },
+    {
+        "contestId": 1990,
+        "contestName": "Codeforces Round 960 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8675,
+        "ratingUpdateTimeSeconds": 1721493300,
+        "oldRating": 1058,
+        "newRating": 1064
+    },
+    {
+        "contestId": 1995,
+        "contestName": "Codeforces Round 961 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6992,
+        "ratingUpdateTimeSeconds": 1721752500,
+        "oldRating": 1064,
+        "newRating": 1101
+    },
+    {
+        "contestId": 1996,
+        "contestName": "Codeforces Round 962 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 15182,
+        "ratingUpdateTimeSeconds": 1722013500,
+        "oldRating": 1101,
+        "newRating": 1056
+    },
+    {
+        "contestId": 1991,
+        "contestName": "Pinely Round 4 (Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 9050,
+        "ratingUpdateTimeSeconds": 1722188100,
+        "oldRating": 1056,
+        "newRating": 1062
+    },
+    {
+        "contestId": 1997,
+        "contestName": "Educational Codeforces Round 168 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 10959,
+        "ratingUpdateTimeSeconds": 1722357300,
+        "oldRating": 1062,
+        "newRating": 1074
+    },
+    {
+        "contestId": 1993,
+        "contestName": "Codeforces Round 963 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 11403,
+        "ratingUpdateTimeSeconds": 1722789300,
+        "oldRating": 1074,
+        "newRating": 1069
+    },
+    {
+        "contestId": 1999,
+        "contestName": "Codeforces Round 964 (Div. 4)",
+        "handle": "Alpha_04.",
+        "rank": 6079,
+        "ratingUpdateTimeSeconds": 1722963600,
+        "oldRating": 1069,
+        "newRating": 1125
+    },
+    {
+        "contestId": 1998,
+        "contestName": "Codeforces Round 965 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4373,
+        "ratingUpdateTimeSeconds": 1723307700,
+        "oldRating": 1125,
+        "newRating": 1226
+    },
+    {
+        "contestId": 2002,
+        "contestName": "EPIC Institute of Technology Round August 2024 (Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8702,
+        "ratingUpdateTimeSeconds": 1723397700,
+        "oldRating": 1226,
+        "newRating": 1191
+    },
+    {
+        "contestId": 2000,
+        "contestName": "Codeforces Round 966 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 8224,
+        "ratingUpdateTimeSeconds": 1723568100,
+        "oldRating": 1191,
+        "newRating": 1203
+    },
+    {
+        "contestId": 2004,
+        "contestName": "Educational Codeforces Round 169 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 12173,
+        "ratingUpdateTimeSeconds": 1723739700,
+        "oldRating": 1203,
+        "newRating": 1162
+    },
+    {
+        "contestId": 2001,
+        "contestName": "Codeforces Round 967 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 11219,
+        "ratingUpdateTimeSeconds": 1724171700,
+        "oldRating": 1162,
+        "newRating": 1139
+    },
+    {
+        "contestId": 2005,
+        "contestName": "Codeforces Round 972 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8053,
+        "ratingUpdateTimeSeconds": 1726331700,
+        "oldRating": 1139,
+        "newRating": 1142
+    },
+    {
+        "contestId": 2013,
+        "contestName": "Codeforces Round 973 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 11562,
+        "ratingUpdateTimeSeconds": 1726850100,
+        "oldRating": 1142,
+        "newRating": 1098
+    },
+    {
+        "contestId": 2014,
+        "contestName": "Codeforces Round 974 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 5848,
+        "ratingUpdateTimeSeconds": 1726938000,
+        "oldRating": 1098,
+        "newRating": 1145
+    },
+    {
+        "contestId": 2019,
+        "contestName": "Codeforces Round 975 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6076,
+        "ratingUpdateTimeSeconds": 1727453100,
+        "oldRating": 1145,
+        "newRating": 1166
+    },
+    {
+        "contestId": 2020,
+        "contestName": "Codeforces Round 976 (Div. 2) and Divide By Zero 9.0",
+        "handle": "Alpha_04.",
+        "rank": 9133,
+        "ratingUpdateTimeSeconds": 1727631300,
+        "oldRating": 1166,
+        "newRating": 1138
+    },
+    {
+        "contestId": 2021,
+        "contestName": "Codeforces Round 977 (Div. 2, based on COMPFEST 16 - Final Round)",
+        "handle": "Alpha_04.",
+        "rank": 5496,
+        "ratingUpdateTimeSeconds": 1728201900,
+        "oldRating": 1138,
+        "newRating": 1155
+    },
+    {
+        "contestId": 2022,
+        "contestName": "Codeforces Round 978 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4334,
+        "ratingUpdateTimeSeconds": 1728855300,
+        "oldRating": 1155,
+        "newRating": 1127
+    },
+    {
+        "contestId": 2025,
+        "contestName": "Educational Codeforces Round 170 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8668,
+        "ratingUpdateTimeSeconds": 1728923700,
+        "oldRating": 1127,
+        "newRating": 1129
+    },
+    {
+        "contestId": 2030,
+        "contestName": "Codeforces Round 979 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 2998,
+        "ratingUpdateTimeSeconds": 1729354800,
+        "oldRating": 1129,
+        "newRating": 1243
+    },
+    {
+        "contestId": 2024,
+        "contestName": "Codeforces Round 980 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 7987,
+        "ratingUpdateTimeSeconds": 1729422300,
+        "oldRating": 1243,
+        "newRating": 1184
+    },
+    {
+        "contestId": 2027,
+        "contestName": "Codeforces Round 982 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6588,
+        "ratingUpdateTimeSeconds": 1729960500,
+        "oldRating": 1184,
+        "newRating": 1175
+    },
+    {
+        "contestId": 2035,
+        "contestName": "Codeforces Global Round 27",
+        "handle": "Alpha_04.",
+        "rank": 9559,
+        "ratingUpdateTimeSeconds": 1730050500,
+        "oldRating": 1175,
+        "newRating": 1094
+    },
+    {
+        "contestId": 2026,
+        "contestName": "Educational Codeforces Round 171 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6700,
+        "ratingUpdateTimeSeconds": 1730133300,
+        "oldRating": 1094,
+        "newRating": 1122
+    },
+    {
+        "contestId": 2032,
+        "contestName": "Codeforces Round 983 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 6115,
+        "ratingUpdateTimeSeconds": 1730478900,
+        "oldRating": 1122,
+        "newRating": 1158
+    },
+    {
+        "contestId": 2036,
+        "contestName": "Codeforces Round 984 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 5968,
+        "ratingUpdateTimeSeconds": 1730566200,
+        "oldRating": 1158,
+        "newRating": 1173
+    },
+    {
+        "contestId": 2029,
+        "contestName": "Refact.ai Match 1 (Codeforces Round 985)",
+        "handle": "Alpha_04.",
+        "rank": 3782,
+        "ratingUpdateTimeSeconds": 1731173700,
+        "oldRating": 1173,
+        "newRating": 1206
+    },
+    {
+        "contestId": 2034,
+        "contestName": "Rayan Programming Contest 2024 - Selection (Codeforces Round 989, Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 3762,
+        "ratingUpdateTimeSeconds": 1732988100,
+        "oldRating": 1206,
+        "newRating": 1265
+    },
+    {
+        "contestId": 2042,
+        "contestName": "Educational Codeforces Round 172 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4425,
+        "ratingUpdateTimeSeconds": 1733157300,
+        "oldRating": 1265,
+        "newRating": 1274
+    },
+    {
+        "contestId": 2047,
+        "contestName": "Codeforces Round 990 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 2352,
+        "ratingUpdateTimeSeconds": 1733214300,
+        "oldRating": 1274,
+        "newRating": 1288
+    },
+    {
+        "contestId": 2050,
+        "contestName": "Codeforces Round 991 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 5344,
+        "ratingUpdateTimeSeconds": 1733417400,
+        "oldRating": 1288,
+        "newRating": 1272
+    },
+    {
+        "contestId": 2040,
+        "contestName": "Codeforces Round 992 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4475,
+        "ratingUpdateTimeSeconds": 1733675700,
+        "oldRating": 1272,
+        "newRating": 1286
+    },
+    {
+        "contestId": 2044,
+        "contestName": "Codeforces Round 993 (Div. 4)",
+        "handle": "Alpha_04.",
+        "rank": 6948,
+        "ratingUpdateTimeSeconds": 1734281400,
+        "oldRating": 1286,
+        "newRating": 1249
+    },
+    {
+        "contestId": 2048,
+        "contestName": "Codeforces Global Round 28",
+        "handle": "Alpha_04.",
+        "rank": 8604,
+        "ratingUpdateTimeSeconds": 1734629700,
+        "oldRating": 1249,
+        "newRating": 1208
+    },
+    {
+        "contestId": 2057,
+        "contestName": "Hello 2025",
+        "handle": "Alpha_04.",
+        "rank": 6642,
+        "ratingUpdateTimeSeconds": 1736010300,
+        "oldRating": 1208,
+        "newRating": 1229
+    },
+    {
+        "contestId": 2055,
+        "contestName": "Codeforces Round 996 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 14274,
+        "ratingUpdateTimeSeconds": 1736699700,
+        "oldRating": 1229,
+        "newRating": 1163
+    },
+    {
+        "contestId": 2060,
+        "contestName": "Codeforces Round 998 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 3318,
+        "ratingUpdateTimeSeconds": 1737306300,
+        "oldRating": 1163,
+        "newRating": 1245
+    },
+    {
+        "contestId": 2061,
+        "contestName": "IAEPC Preliminary Contest (Codeforces Round 999, Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 7806,
+        "ratingUpdateTimeSeconds": 1737394500,
+        "oldRating": 1245,
+        "newRating": 1199
+    },
+    {
+        "contestId": 2062,
+        "contestName": "Ethflow Round 1 (Codeforces Round 1001, Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 9001,
+        "ratingUpdateTimeSeconds": 1737911100,
+        "oldRating": 1199,
+        "newRating": 1183
+    },
+    {
+        "contestId": 2059,
+        "contestName": "Codeforces Round 1002 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 2057,
+        "ratingUpdateTimeSeconds": 1738514100,
+        "oldRating": 1183,
+        "newRating": 1326
+    },
+    {
+        "contestId": 2065,
+        "contestName": "Codeforces Round 1003 (Div. 4)",
+        "handle": "Alpha_04.",
+        "rank": 4429,
+        "ratingUpdateTimeSeconds": 1739119800,
+        "oldRating": 1326,
+        "newRating": 1321
+    },
+    {
+        "contestId": 2067,
+        "contestName": "Codeforces Round 1004 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 5227,
+        "ratingUpdateTimeSeconds": 1739291700,
+        "oldRating": 1321,
+        "newRating": 1324
+    },
+    {
+        "contestId": 2064,
+        "contestName": "Codeforces Round 1005 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 7948,
+        "ratingUpdateTimeSeconds": 1739723700,
+        "oldRating": 1324,
+        "newRating": 1288
+    },
+    {
+        "contestId": 2069,
+        "contestName": "Educational Codeforces Round 174 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4980,
+        "ratingUpdateTimeSeconds": 1739896500,
+        "oldRating": 1288,
+        "newRating": 1305
+    },
+    {
+        "contestId": 2072,
+        "contestName": "Codeforces Round 1006 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 4281,
+        "ratingUpdateTimeSeconds": 1740502200,
+        "oldRating": 1305,
+        "newRating": 1322
+    },
+    {
+        "contestId": 2070,
+        "contestName": "Educational Codeforces Round 175 (Rated for Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 5247,
+        "ratingUpdateTimeSeconds": 1740674100,
+        "oldRating": 1322,
+        "newRating": 1322
+    },
+    {
+        "contestId": 2071,
+        "contestName": "Codeforces Round 1007 (Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 8662,
+        "ratingUpdateTimeSeconds": 1740761400,
+        "oldRating": 1322,
+        "newRating": 1274
+    },
+    {
+        "contestId": 2074,
+        "contestName": "Codeforces Round 1009 (Div. 3)",
+        "handle": "Alpha_04.",
+        "rank": 7731,
+        "ratingUpdateTimeSeconds": 1741712700,
+        "oldRating": 1274,
+        "newRating": 1250
+    },
+    {
+        "contestId": 2096,
+        "contestName": "Neowise Labs Contest 1 (Codeforces Round 1018, Div. 1 + Div. 2)",
+        "handle": "Alpha_04.",
+        "rank": 4460,
+        "ratingUpdateTimeSeconds": 1745080500,
+        "oldRating": 1250,
+        "newRating": 1301
+    }
+]

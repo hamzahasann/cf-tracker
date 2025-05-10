@@ -1,0 +1,740 @@
+[
+    {
+        "contestId": 1850,
+        "contestName": "Codeforces Round 886 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 22248,
+        "ratingUpdateTimeSeconds": 1689957300,
+        "oldRating": 0,
+        "newRating": 350
+    },
+    {
+        "contestId": 1856,
+        "contestName": "Codeforces Round 890 (Div. 2) supported by Constructor Institute",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 14631,
+        "ratingUpdateTimeSeconds": 1691253300,
+        "oldRating": 350,
+        "newRating": 568
+    },
+    {
+        "contestId": 1894,
+        "contestName": "Codeforces Round 908 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8494,
+        "ratingUpdateTimeSeconds": 1699374900,
+        "oldRating": 568,
+        "newRating": 705
+    },
+    {
+        "contestId": 1899,
+        "contestName": "Codeforces Round 909 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 15076,
+        "ratingUpdateTimeSeconds": 1700239800,
+        "oldRating": 705,
+        "newRating": 768
+    },
+    {
+        "contestId": 1902,
+        "contestName": "Educational Codeforces Round 159 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9737,
+        "ratingUpdateTimeSeconds": 1701621300,
+        "oldRating": 768,
+        "newRating": 823
+    },
+    {
+        "contestId": 1907,
+        "contestName": "Codeforces Round 913 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 15107,
+        "ratingUpdateTimeSeconds": 1701795600,
+        "oldRating": 823,
+        "newRating": 815
+    },
+    {
+        "contestId": 1913,
+        "contestName": "Educational Codeforces Round 160 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10906,
+        "ratingUpdateTimeSeconds": 1702917300,
+        "oldRating": 815,
+        "newRating": 824
+    },
+    {
+        "contestId": 1914,
+        "contestName": "Codeforces Round 916 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 16855,
+        "ratingUpdateTimeSeconds": 1703005500,
+        "oldRating": 824,
+        "newRating": 721
+    },
+    {
+        "contestId": 1915,
+        "contestName": "Codeforces Round 918 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 15948,
+        "ratingUpdateTimeSeconds": 1703783100,
+        "oldRating": 721,
+        "newRating": 755
+    },
+    {
+        "contestId": 1919,
+        "contestName": "Hello 2024",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 14217,
+        "ratingUpdateTimeSeconds": 1704560700,
+        "oldRating": 755,
+        "newRating": 810
+    },
+    {
+        "contestId": 1921,
+        "contestName": "Codeforces Round 920 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 22610,
+        "ratingUpdateTimeSeconds": 1705337400,
+        "oldRating": 810,
+        "newRating": 738
+    },
+    {
+        "contestId": 1922,
+        "contestName": "Educational Codeforces Round 161 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10949,
+        "ratingUpdateTimeSeconds": 1705595700,
+        "oldRating": 738,
+        "newRating": 787
+    },
+    {
+        "contestId": 1925,
+        "contestName": "Codeforces Round 921 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 17004,
+        "ratingUpdateTimeSeconds": 1706373900,
+        "oldRating": 787,
+        "newRating": 684
+    },
+    {
+        "contestId": 1918,
+        "contestName": "Codeforces Round 922 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 13495,
+        "ratingUpdateTimeSeconds": 1706633100,
+        "oldRating": 684,
+        "newRating": 761
+    },
+    {
+        "contestId": 1931,
+        "contestName": "Codeforces Round 925 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 17762,
+        "ratingUpdateTimeSeconds": 1707843000,
+        "oldRating": 761,
+        "newRating": 775
+    },
+    {
+        "contestId": 1929,
+        "contestName": "Codeforces Round 926 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 18591,
+        "ratingUpdateTimeSeconds": 1708014900,
+        "oldRating": 775,
+        "newRating": 677
+    },
+    {
+        "contestId": 1930,
+        "contestName": "think-cell Round 1",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8360,
+        "ratingUpdateTimeSeconds": 1708191300,
+        "oldRating": 677,
+        "newRating": 769
+    },
+    {
+        "contestId": 1932,
+        "contestName": "Codeforces Round 927 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10849,
+        "ratingUpdateTimeSeconds": 1708266000,
+        "oldRating": 769,
+        "newRating": 810
+    },
+    {
+        "contestId": 1926,
+        "contestName": "Codeforces Round 928 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 13193,
+        "ratingUpdateTimeSeconds": 1708361400,
+        "oldRating": 810,
+        "newRating": 855
+    },
+    {
+        "contestId": 1923,
+        "contestName": "Educational Codeforces Round 162 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 13744,
+        "ratingUpdateTimeSeconds": 1708706100,
+        "oldRating": 855,
+        "newRating": 815
+    },
+    {
+        "contestId": 1933,
+        "contestName": "Codeforces Round 929 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 18679,
+        "ratingUpdateTimeSeconds": 1709052600,
+        "oldRating": 815,
+        "newRating": 803
+    },
+    {
+        "contestId": 1937,
+        "contestName": "Codeforces Round 930 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 12324,
+        "ratingUpdateTimeSeconds": 1709224500,
+        "oldRating": 803,
+        "newRating": 784
+    },
+    {
+        "contestId": 1934,
+        "contestName": "Codeforces Round 931 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11955,
+        "ratingUpdateTimeSeconds": 1709310900,
+        "oldRating": 784,
+        "newRating": 794
+    },
+    {
+        "contestId": 1935,
+        "contestName": "Codeforces Round 932 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 15251,
+        "ratingUpdateTimeSeconds": 1709656500,
+        "oldRating": 794,
+        "newRating": 791
+    },
+    {
+        "contestId": 1941,
+        "contestName": "Codeforces Round 933 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 19097,
+        "ratingUpdateTimeSeconds": 1710175800,
+        "oldRating": 791,
+        "newRating": 788
+    },
+    {
+        "contestId": 1945,
+        "contestName": "Codeforces Round 935 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8270,
+        "ratingUpdateTimeSeconds": 1710843600,
+        "oldRating": 788,
+        "newRating": 815
+    },
+    {
+        "contestId": 1942,
+        "contestName": "CodeTON Round 8 (Div. 1 + Div. 2, Rated, Prizes!)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9855,
+        "ratingUpdateTimeSeconds": 1711820100,
+        "oldRating": 815,
+        "newRating": 791
+    },
+    {
+        "contestId": 1957,
+        "contestName": "Codeforces Round 940 (Div. 2) and CodeCraft-23",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 7231,
+        "ratingUpdateTimeSeconds": 1713718200,
+        "oldRating": 791,
+        "newRating": 894
+    },
+    {
+        "contestId": 1966,
+        "contestName": "Codeforces Round 941 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9206,
+        "ratingUpdateTimeSeconds": 1714235700,
+        "oldRating": 894,
+        "newRating": 794
+    },
+    {
+        "contestId": 1969,
+        "contestName": "Educational Codeforces Round 165 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8127,
+        "ratingUpdateTimeSeconds": 1714408500,
+        "oldRating": 794,
+        "newRating": 853
+    },
+    {
+        "contestId": 1972,
+        "contestName": "Codeforces Round 942 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6856,
+        "ratingUpdateTimeSeconds": 1714496700,
+        "oldRating": 853,
+        "newRating": 910
+    },
+    {
+        "contestId": 1968,
+        "contestName": "Codeforces Round 943 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 3565,
+        "ratingUpdateTimeSeconds": 1714669200,
+        "oldRating": 910,
+        "newRating": 1055
+    },
+    {
+        "contestId": 1971,
+        "contestName": "Codeforces Round 944 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6908,
+        "ratingUpdateTimeSeconds": 1715359800,
+        "oldRating": 1055,
+        "newRating": 1079
+    },
+    {
+        "contestId": 1973,
+        "contestName": "Codeforces Round 945 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10086,
+        "ratingUpdateTimeSeconds": 1715963700,
+        "oldRating": 1079,
+        "newRating": 1038
+    },
+    {
+        "contestId": 1974,
+        "contestName": "Codeforces Round 946 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 15899,
+        "ratingUpdateTimeSeconds": 1716223800,
+        "oldRating": 1038,
+        "newRating": 977
+    },
+    {
+        "contestId": 1976,
+        "contestName": "Educational Codeforces Round 166 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11454,
+        "ratingUpdateTimeSeconds": 1717086900,
+        "oldRating": 977,
+        "newRating": 989
+    },
+    {
+        "contestId": 1981,
+        "contestName": "Codeforces Round 949 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 4763,
+        "ratingUpdateTimeSeconds": 1717157100,
+        "oldRating": 989,
+        "newRating": 1073
+    },
+    {
+        "contestId": 1985,
+        "contestName": "Codeforces Round 952 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6475,
+        "ratingUpdateTimeSeconds": 1718125500,
+        "oldRating": 1073,
+        "newRating": 1099
+    },
+    {
+        "contestId": 1989,
+        "contestName": "Educational Codeforces Round 167 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 7563,
+        "ratingUpdateTimeSeconds": 1719506100,
+        "oldRating": 1099,
+        "newRating": 1124
+    },
+    {
+        "contestId": 1987,
+        "contestName": "EPIC Institute of Technology Round Summer 2024 (Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 7001,
+        "ratingUpdateTimeSeconds": 1719768900,
+        "oldRating": 1124,
+        "newRating": 1141
+    },
+    {
+        "contestId": 1992,
+        "contestName": "Codeforces Round 957 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 14878,
+        "ratingUpdateTimeSeconds": 1720716600,
+        "oldRating": 1141,
+        "newRating": 1089
+    },
+    {
+        "contestId": 1994,
+        "contestName": "Codeforces Round 959 sponsored by NEAR (Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8718,
+        "ratingUpdateTimeSeconds": 1721320500,
+        "oldRating": 1089,
+        "newRating": 1086
+    },
+    {
+        "contestId": 1990,
+        "contestName": "Codeforces Round 960 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9166,
+        "ratingUpdateTimeSeconds": 1721493300,
+        "oldRating": 1086,
+        "newRating": 1075
+    },
+    {
+        "contestId": 1995,
+        "contestName": "Codeforces Round 961 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 12997,
+        "ratingUpdateTimeSeconds": 1721752500,
+        "oldRating": 1075,
+        "newRating": 1000
+    },
+    {
+        "contestId": 1996,
+        "contestName": "Codeforces Round 962 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10703,
+        "ratingUpdateTimeSeconds": 1722013500,
+        "oldRating": 1000,
+        "newRating": 1026
+    },
+    {
+        "contestId": 1991,
+        "contestName": "Pinely Round 4 (Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8708,
+        "ratingUpdateTimeSeconds": 1722188100,
+        "oldRating": 1026,
+        "newRating": 1047
+    },
+    {
+        "contestId": 1997,
+        "contestName": "Educational Codeforces Round 168 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 13275,
+        "ratingUpdateTimeSeconds": 1722357300,
+        "oldRating": 1047,
+        "newRating": 1032
+    },
+    {
+        "contestId": 1993,
+        "contestName": "Codeforces Round 963 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 12897,
+        "ratingUpdateTimeSeconds": 1722789300,
+        "oldRating": 1032,
+        "newRating": 1018
+    },
+    {
+        "contestId": 1999,
+        "contestName": "Codeforces Round 964 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6332,
+        "ratingUpdateTimeSeconds": 1722963600,
+        "oldRating": 1018,
+        "newRating": 1088
+    },
+    {
+        "contestId": 1998,
+        "contestName": "Codeforces Round 965 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 17240,
+        "ratingUpdateTimeSeconds": 1723307700,
+        "oldRating": 1088,
+        "newRating": 974
+    },
+    {
+        "contestId": 2000,
+        "contestName": "Codeforces Round 966 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 7603,
+        "ratingUpdateTimeSeconds": 1723568100,
+        "oldRating": 974,
+        "newRating": 1062
+    },
+    {
+        "contestId": 2004,
+        "contestName": "Educational Codeforces Round 169 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 13853,
+        "ratingUpdateTimeSeconds": 1723739700,
+        "oldRating": 1062,
+        "newRating": 1033
+    },
+    {
+        "contestId": 2014,
+        "contestName": "Codeforces Round 974 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10978,
+        "ratingUpdateTimeSeconds": 1726938000,
+        "oldRating": 1033,
+        "newRating": 1031
+    },
+    {
+        "contestId": 2025,
+        "contestName": "Educational Codeforces Round 170 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 14190,
+        "ratingUpdateTimeSeconds": 1728923700,
+        "oldRating": 1031,
+        "newRating": 971
+    },
+    {
+        "contestId": 2030,
+        "contestName": "Codeforces Round 979 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11774,
+        "ratingUpdateTimeSeconds": 1729354800,
+        "oldRating": 971,
+        "newRating": 958
+    },
+    {
+        "contestId": 2035,
+        "contestName": "Codeforces Global Round 27",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10393,
+        "ratingUpdateTimeSeconds": 1730050500,
+        "oldRating": 958,
+        "newRating": 892
+    },
+    {
+        "contestId": 2026,
+        "contestName": "Educational Codeforces Round 171 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5900,
+        "ratingUpdateTimeSeconds": 1730133300,
+        "oldRating": 892,
+        "newRating": 1008
+    },
+    {
+        "contestId": 2032,
+        "contestName": "Codeforces Round 983 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 3765,
+        "ratingUpdateTimeSeconds": 1730478900,
+        "oldRating": 1008,
+        "newRating": 1142
+    },
+    {
+        "contestId": 2036,
+        "contestName": "Codeforces Round 984 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5729,
+        "ratingUpdateTimeSeconds": 1730566200,
+        "oldRating": 1142,
+        "newRating": 1165
+    },
+    {
+        "contestId": 2028,
+        "contestName": "Codeforces Round 986 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5982,
+        "ratingUpdateTimeSeconds": 1731260100,
+        "oldRating": 1165,
+        "newRating": 1133
+    },
+    {
+        "contestId": 2031,
+        "contestName": "Codeforces Round 987 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5897,
+        "ratingUpdateTimeSeconds": 1731681300,
+        "oldRating": 1133,
+        "newRating": 1142
+    },
+    {
+        "contestId": 2037,
+        "contestName": "Codeforces Round 988 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 4943,
+        "ratingUpdateTimeSeconds": 1731862200,
+        "oldRating": 1142,
+        "newRating": 1163
+    },
+    {
+        "contestId": 2039,
+        "contestName": "CodeTON Round 9 (Div. 1 + Div. 2, Rated, Prizes!)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 4174,
+        "ratingUpdateTimeSeconds": 1732383300,
+        "oldRating": 1163,
+        "newRating": 1207
+    },
+    {
+        "contestId": 2034,
+        "contestName": "Rayan Programming Contest 2024 - Selection (Codeforces Round 989, Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11105,
+        "ratingUpdateTimeSeconds": 1732988100,
+        "oldRating": 1207,
+        "newRating": 1085
+    },
+    {
+        "contestId": 2042,
+        "contestName": "Educational Codeforces Round 172 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6160,
+        "ratingUpdateTimeSeconds": 1733157300,
+        "oldRating": 1085,
+        "newRating": 1103
+    },
+    {
+        "contestId": 2047,
+        "contestName": "Codeforces Round 990 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 2832,
+        "ratingUpdateTimeSeconds": 1733214300,
+        "oldRating": 1103,
+        "newRating": 1145
+    },
+    {
+        "contestId": 2050,
+        "contestName": "Codeforces Round 991 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 3695,
+        "ratingUpdateTimeSeconds": 1733417400,
+        "oldRating": 1145,
+        "newRating": 1201
+    },
+    {
+        "contestId": 2040,
+        "contestName": "Codeforces Round 992 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9999,
+        "ratingUpdateTimeSeconds": 1733675700,
+        "oldRating": 1201,
+        "newRating": 1130
+    },
+    {
+        "contestId": 2048,
+        "contestName": "Codeforces Global Round 28",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11951,
+        "ratingUpdateTimeSeconds": 1734629700,
+        "oldRating": 1130,
+        "newRating": 1059
+    },
+    {
+        "contestId": 2051,
+        "contestName": "Codeforces Round 995 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5557,
+        "ratingUpdateTimeSeconds": 1734886200,
+        "oldRating": 1059,
+        "newRating": 1122
+    },
+    {
+        "contestId": 2043,
+        "contestName": "Educational Codeforces Round 173 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10379,
+        "ratingUpdateTimeSeconds": 1735058100,
+        "oldRating": 1122,
+        "newRating": 1083
+    },
+    {
+        "contestId": 2055,
+        "contestName": "Codeforces Round 996 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 10345,
+        "ratingUpdateTimeSeconds": 1736699700,
+        "oldRating": 1083,
+        "newRating": 1095
+    },
+    {
+        "contestId": 2060,
+        "contestName": "Codeforces Round 998 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 4194,
+        "ratingUpdateTimeSeconds": 1737306300,
+        "oldRating": 1095,
+        "newRating": 1182
+    },
+    {
+        "contestId": 2061,
+        "contestName": "IAEPC Preliminary Contest (Codeforces Round 999, Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5341,
+        "ratingUpdateTimeSeconds": 1737394500,
+        "oldRating": 1182,
+        "newRating": 1212
+    },
+    {
+        "contestId": 2062,
+        "contestName": "Ethflow Round 1 (Codeforces Round 1001, Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 8349,
+        "ratingUpdateTimeSeconds": 1737911100,
+        "oldRating": 1212,
+        "newRating": 1204
+    },
+    {
+        "contestId": 2065,
+        "contestName": "Codeforces Round 1003 (Div. 4)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 17836,
+        "ratingUpdateTimeSeconds": 1739119800,
+        "oldRating": 1204,
+        "newRating": 1120
+    },
+    {
+        "contestId": 2069,
+        "contestName": "Educational Codeforces Round 174 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6926,
+        "ratingUpdateTimeSeconds": 1739896500,
+        "oldRating": 1120,
+        "newRating": 1148
+    },
+    {
+        "contestId": 2072,
+        "contestName": "Codeforces Round 1006 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 9257,
+        "ratingUpdateTimeSeconds": 1740502200,
+        "oldRating": 1148,
+        "newRating": 1145
+    },
+    {
+        "contestId": 2070,
+        "contestName": "Educational Codeforces Round 175 (Rated for Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 11641,
+        "ratingUpdateTimeSeconds": 1740674100,
+        "oldRating": 1145,
+        "newRating": 1092
+    },
+    {
+        "contestId": 2078,
+        "contestName": "Codeforces Round 1008 (Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 6129,
+        "ratingUpdateTimeSeconds": 1741626900,
+        "oldRating": 1092,
+        "newRating": 1134
+    },
+    {
+        "contestId": 2074,
+        "contestName": "Codeforces Round 1009 (Div. 3)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 7051,
+        "ratingUpdateTimeSeconds": 1741712700,
+        "oldRating": 1134,
+        "newRating": 1156
+    },
+    {
+        "contestId": 2096,
+        "contestName": "Neowise Labs Contest 1 (Codeforces Round 1018, Div. 1 + Div. 2)",
+        "handle": "Faiz-ur-Rehman_",
+        "rank": 5134,
+        "ratingUpdateTimeSeconds": 1745080500,
+        "oldRating": 1156,
+        "newRating": 1216
+    }
+]
