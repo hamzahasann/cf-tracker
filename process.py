@@ -112,27 +112,3 @@ def convert_to_unix_time(time: str) -> int:
     dt = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
     local_dt = pakistan_tz.localize(dt)
     return local_dt.timestamp()
-
-start_time_raw = "2025-01-01 12:00:00"
-end_time_raw = "2025-05-10 12:00:00"
-
-start_time = convert_to_unix_time(start_time_raw)
-end_time = convert_to_unix_time(end_time_raw)
-
-handles = ["-Absam-", "Alpha_04.", "Ayan_Sohail", "Faiz-ur-Rehman_", "Gondal_Shameer", "M.Nauman", "Sahil_Sarfraz"]
-
-user_data = []
-for handle in handles:
-    submission_data = load_submissions(handle, start_time, end_time)
-    contest_data = load_contest_data(handle)
-    stats = process(submission_data, contest_data)
-    u = User(
-        handle=handle,
-        stats=stats
-    )
-    user_data.append(u)
-
-serializable = [u.model_dump() for u in user_data]
-with open("data.json", "w") as f:
-    json.dump(serializable, f, indent=4)
-
