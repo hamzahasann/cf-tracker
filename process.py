@@ -88,7 +88,10 @@ def process(submissions: List[Submission], contest_data: List[ContestParticipati
             if submission.in_contest:
                 contests.add(submission.contest_id)
     
-    avg_difficulty = sum_difficulty / problems_calculated
+    if problems_calculated == 0:
+        avg_difficulty = 0
+    else:
+        avg_difficulty = sum_difficulty / problems_calculated
     avg_difficulty = round(avg_difficulty / 50) * 50
     
     contest_data = [c for c in contest_data if c.contest_id in contests]
@@ -110,7 +113,7 @@ def convert_to_unix_time(time: str) -> int:
     local_dt = pakistan_tz.localize(dt)
     return local_dt.timestamp()
 
-start_time_raw = "2025-04-10 12:00:00"
+start_time_raw = "2025-01-01 12:00:00"
 end_time_raw = "2025-05-10 12:00:00"
 
 start_time = convert_to_unix_time(start_time_raw)
@@ -130,7 +133,6 @@ for handle in handles:
     user_data.append(u)
 
 serializable = [u.model_dump() for u in user_data]
-print(serializable)
 with open("data.json", "w") as f:
     json.dump(serializable, f, indent=4)
 
