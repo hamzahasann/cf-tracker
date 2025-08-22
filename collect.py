@@ -2,6 +2,8 @@ import json
 import requests
 import os
 
+from utils import load_handles
+
 def collect(handle, incremental = True):
     submissions = []
     try:
@@ -61,10 +63,8 @@ def fetch_contests():
 
 
 if __name__ == "__main__":
-    handles = []
+    handles = load_handles("users.txt")
     os.makedirs("data", exist_ok=True)
-    with open("users.txt", "r") as f:
-        handles = [line.split(',')[-1].strip() for line in f if line.strip()]
     fetch_contests()
     print(f"Fetching submissions for {len(handles)} handles")
     for handle in handles:

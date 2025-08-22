@@ -13,24 +13,13 @@ from reportlab.platypus.frames import Frame
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
 import os
 from process import load_submissions, load_contest_data, process, convert_to_unix_time
+from utils import load_handles
 
 pakistan_tz = pytz.timezone("Asia/Karachi")
+USER_FILE = "users.txt"
 
 def parse_date(date_str):
-    """Parse date string in DDMMYYYY format"""
-    try:
-        return datetime.strptime(date_str, "%d%m%Y").date()
-    except ValueError:
-        raise ValueError(f"Invalid date format: {date_str}. Expected DDMMYYYY")
-
-def get_handles_from_data_folder():
-    """Get all unique handles from the data folder"""
-    handles = set()
-    for filename in os.listdir("data"):
-        if filename.endswith("_submissions.json"):
-            handle = filename.replace("_submissions.json", "")
-            handles.add(handle)
-    return list(handles)
+    return datetime.strptime(date_str, "%d%m%Y").date()
 
 def load_user_real_names():
     """Load mapping of handles to real names from users.txt file"""
@@ -351,34 +340,25 @@ def main():
         print("Usage: python export_pdf.py start_date end_date")
         print("Date format: DDMMYYYY (e.g., 01012025 for January 1, 2025)")
         sys.exit(1)
-    
-    try:
-        start_date = parse_date(sys.argv[1])
-        end_date = parse_date(sys.argv[2])
-    except ValueError as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-    
+
+    start_date = parse_date(sys.argv[1])
+    end_date = parse_date(sys.argv[2])
     if start_date > end_date:
         print("Error: Start date must be before or equal to end date")
         sys.exit(1)
-    
     print(f"Generating PDF report for period: {start_date.strftime('%d/%m/%Y')} - {end_date.strftime('%d/%m/%Y')}")
     
-    # Get all handles from data folder
-    handles = get_handles_from_data_folder()
+    handles = load_handles(USER_FILE)
     if not handles:
-        print("Error: No submission data found in data folder")
+        print(f"Error: No handles in {USER_FILE}")
         sys.exit(1)
     
     print(f"Found {len(handles)} handles: {', '.join(handles)}")
     
-    # Convert dates to timestamps for filtering
     start_timestamp = convert_to_unix_time(start_date.strftime("%Y-%m-%d 00:00:00"))
     end_timestamp = convert_to_unix_time(end_date.strftime("%Y-%m-%d 23:59:59"))
     
-    # Process each user
-    students = []
+    user = []
     for handle in handles:
         try:
             print(f"Processing {handle}...")
@@ -386,23 +366,23 @@ def main():
             contest_data = load_contest_data(handle)
             stats = process(submission_data, contest_data)
             
-            student = {
+            user = {
                 "handle": handle,
                 "stats": stats.model_dump()
             }
-            students.append(student)
+            user.append(user)
         except Exception as e:
             print(f"Warning: Could not process {handle}: {e}")
     
-    if not students:
-        print("Error: No student data could be processed")
+    if not user:
+        print("Error: No user data could be processed")
         sys.exit(1)
     
     # Generate PDF
     output_filename = f"codeforces_report_{start_date.strftime('%d%m%Y')}_{end_date.strftime('%d%m%Y')}.pdf"
     
     try:
-        generate_pdf_report(students, start_date, end_date, output_filename)
+        generate_pdf_report(user, start_date, end_date, output_filename)
         print(f"PDF report generated successfully: {output_filename}")
     except Exception as e:
         print(f"Error generating PDF: {e}")
