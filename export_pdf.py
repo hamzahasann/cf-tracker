@@ -2,6 +2,8 @@ import json
 import sys
 from datetime import date, datetime
 import pytz
+from typing import Any, Dict, List, Tuple
+from collections import Counter, defaultdict
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.platypus import Paragraph, Spacer, Table, TableStyle, PageBreak
@@ -10,11 +12,11 @@ from reportlab.lib.units import inch
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.platypus.frames import Frame
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
+
 from utils import dict_to_model, get_contest_timestamp, load_users, convert_to_unix_time
 from structs import Submission, Problem, ContestParticipation
-from typing import Any, Dict, List, Tuple
 
-styles = getSampleStyleSheet()
+
 pakistan_tz = pytz.timezone("Asia/Karachi")
 USER_FILE = "users.txt"
 DATA_FOLDER = "data"
@@ -85,18 +87,6 @@ def load_submissions(handle: str, start_time: int, end_time: int, data_folder: s
         s = dict_to_model(Submission, submission)
         result.append(s)
     return result
-    
-def get_daily_activity(stats, start_date: date, end_date):
-    result = []
-    for date, count in stats["daily_solves"].items():
-        if date < start_date or date > end_date:
-            continue
-        result.append({
-            "date_str": date.strftime("%d %b %Y"),
-            "day": date.strftime("%A"),
-            "count": count
-        })
-    return result
 
 class PDFWithFooter(BaseDocTemplate):
     def __init__(self, filename, footer_text, date_range=None, **kwargs):
@@ -150,11 +140,7 @@ def make_daily_table(stats: Dict[str, Any], start_date: date, end_date: date):
     for date, count in stats["daily_solves"].items():
         if date < start_date or date > end_date:
             continue
-        daily_table_rows.append([
-            date.strftime("%d %b %Y"),
-            date.strftime("%A"),
-            count
-        ])
+        daily_table_rows.append([date.strftime("%d %b %Y"),date.strftime("%A"),count])
         daily_table = Table(daily_table_rows, colWidths=[1.5*inch, 2*inch, 2*inch])
         daily_table.setStyle(default_table_style)
     return daily_table
@@ -172,13 +158,8 @@ def make_contest_table(contest_result):
     for c in contest_result:
         rating_change = c.newRating - c.oldRating
         change_text = f"+{rating_change}" if rating_change > 0 else str(rating_change)
-        contest_table_rows.append([
-            datetime.fromtimestamp(c.timestamp, tz=pakistan_tz).strftime("%b %d %H:%M"),
-            c.contestName,
-            str(c.rank),
-            str(c.newRating),
-            change_text
-        ])
+        dt_str = datetime.fromtimestamp(c.timestamp, tz=pakistan_tz).strftime("%b %d %H:%M")
+        contest_table_rows.append([dt_str, c.contestName, str(c.rank), str(c.newRating), change_text])
     contest_table = Table(contest_table_rows, colWidths=[1*inch, 3*inch, 0.7*inch, 0.7*inch, 0.7*inch])
     contest_table.setStyle(default_table_style)
     return contest_table
@@ -226,8 +207,8 @@ def compute_stats(submissions: List[Submission], contest_participations: List[Co
     sum_difficulty = 0
     problems_calculated = 0
     solved_problems = []
-    daily_solves = dict()
-    tag_solves = dict()
+    daily_solves = defaultdict(int)
+    tag_solves = Counter()
     contest_ids = set()
     for submission in submissions:
         if submission.verdict != "OK":
@@ -238,21 +219,13 @@ def compute_stats(submissions: List[Submission], contest_participations: List[Co
             problems_calculated += 1
         solved_problems.append(submission.problem)
         date = datetime.fromtimestamp(submission.creationTimeSeconds, tz=pakistan_tz).date()
-        if date not in daily_solves:
-            daily_solves[date] = 0
         daily_solves[date] += 1
-        for tag in submission.problem.tags:
-            if tag not in tag_solves:
-                tag_solves[tag] = 0
-            tag_solves[tag] += 1
+        tag_solves.update(submission.problem.tags)
         if submission.inContest:
             contest_ids.add(submission.contestId)
 
-    if problems_calculated == 0:
-        avg_difficulty = 0
-    else:
-        avg_difficulty = sum_difficulty / problems_calculated
-    avg_difficulty = round(avg_difficulty / 50) * 50
+    avg_difficulty = 0 if problems_calculated == 0 else round(sum_difficulty / problems_calculated / 50) * 50
+
     contest_activity = [cp for cp in contest_participations if cp.contestId in contest_ids]
     return {
         "attempted": len(submissions),
