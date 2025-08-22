@@ -19,6 +19,33 @@ pakistan_tz = pytz.timezone("Asia/Karachi")
 USER_FILE = "users.txt"
 DATA_FOLDER = "data"
 
+base_styles = getSampleStyleSheet()
+
+custom_styles = {
+    "title": ParagraphStyle(
+        "title",
+        parent=base_styles["Heading1"],
+        fontSize=22,
+        alignment=TA_CENTER,
+        spaceAfter=6,
+    ),
+    "subtitle": ParagraphStyle(
+        "subtitle",
+        parent=base_styles["Heading2"],
+        fontSize=18,
+        alignment=TA_CENTER,
+        spaceAfter=12,
+    ),
+    "section": ParagraphStyle(
+        "section",
+        parent=base_styles["Heading2"],
+        fontSize=14,
+        alignment=TA_LEFT,
+        spaceAfter=6,
+    ),
+    "normal": base_styles["Normal"]
+}
+
 def load_contest_data(handle: str, start_time: int, end_time: int, data_folder: str) -> List[ContestParticipation]:
     with open(f"{data_folder}/{handle}_rating.json", "r") as f:
         contest_participations = json.load(f)
@@ -187,10 +214,16 @@ def make_contest_table(contest_result):
     ]))
     return contest_table
 
+def add_section(elements, title, make_table_if, make_table_func, fallback_text, *make_table_args):
+    elements.append(Paragraph(title, custom_styles["section"]))
+    if make_table_if:
+        elements.append(make_table_func(*make_table_args))
+    else:
+        elements.append(Paragraph(fallback_text, custom_styles["normal"]))
+
 def generate_pdf_report(results, start_date, end_date, output_filename):
     date_range_text = f"{start_date.strftime('%d/%m/%Y')} - {end_date.strftime('%d/%m/%Y')}"
     footer_text = "This report was automatically generated and is for informational purposes only."
-    
     doc = PDFWithFooter(
         output_filename, 
         footer_text,
@@ -201,72 +234,21 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         topMargin=0.5*inch,
         bottomMargin=0.75*inch
     )
-        
-    title_style = ParagraphStyle(
-        'Title',
-        parent=styles['Heading1'],
-        fontSize=22,
-        alignment=TA_CENTER,
-        spaceAfter=6
-    )
-    
-    subtitle_style = ParagraphStyle(
-        'Subtitle',
-        parent=styles['Heading2'],
-        fontSize=18,
-        alignment=TA_CENTER,
-        spaceAfter=12
-    )
-    
-    section_style = ParagraphStyle(
-        'Section',
-        parent=styles['Heading2'],
-        fontSize=14,
-        alignment=TA_LEFT,
-        spaceAfter=6
-    )
-    
-    normal_style = styles["Normal"]
-    
     elements = []
-    
     for result in results:
         real_name, handle, stats = result["real_name"], result["handle"], result["stats"]
-        elements.append(Paragraph(f"Name: {real_name}", title_style))
-        elements.append(Paragraph(f"CF: {handle}", subtitle_style))
+        elements.append(Paragraph(f"Name: {real_name}", custom_styles["title"]))
+        elements.append(Paragraph(f"CF: {handle}", custom_styles["subtitle"]))
         elements.append(Spacer(1, 0.2*inch))
-        elements.append(Paragraph("Stats Overview", section_style))
-
-        elements.append(make_overview_table(stats))
-        
+        add_section(elements, "Stats Overview", True, make_overview_table, "No stats available for the selected period", stats)
         elements.append(Spacer(1, 0.3*inch))
-
-        elements.append(Paragraph("Daily Activity", section_style))
-        if stats["daily_solves"]:
-            elements.append(make_daily_table(stats, start_date, end_date))
-        else:
-            elements.append(Paragraph("No activity data available for the selected period", normal_style))
-
+        add_section(elements, "Daily Activity", stats["daily_solves"], make_daily_table, "No activity data available for the selected period", stats, start_date, end_date)
         elements.append(Spacer(1, 0.3*inch))
-
-        elements.append(Paragraph("Problem Tags", section_style))
-        if stats["tag_solves"]:
-            tag_solves_sorted = sorted(stats["tag_solves"].items(), key=lambda x: x[1], reverse=True)[:10]
-            elements.append(make_tags_table(tag_solves_sorted))
-        else:
-            elements.append(Paragraph("No tag data available", normal_style))
-        
+        add_section(elements, "Problem Tags", stats["tag_solves"], make_tags_table, "No tag data available", sorted(stats["tag_solves"].items(), key=lambda x: x[1], reverse=True)[:10])
         elements.append(Spacer(1, 0.3*inch))
-        
-        elements.append(Paragraph("Contest Participation", section_style))
-        if stats["contest_result"]:
-            elements.append(make_contest_table(stats["contest_result"]))
-        else:
-            elements.append(Paragraph("No contest data available", normal_style))
-
+        add_section(elements, "Contest Participation", stats["contest_result"], make_contest_table, "No contest data available", stats["contest_result"])
         if result != results[-1]:
             elements.append(PageBreak())
-    
     doc.build(elements)
 
 def compute_stats(submissions: List[Submission], contest_participations: List[ContestParticipation]) -> Dict[str, Any]:
