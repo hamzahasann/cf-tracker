@@ -179,14 +179,6 @@ def make_contest_table(contest_result):
             str(c.newRating),
             change_text
         ])
-    table_style = ParagraphStyle(
-        'TableContent',
-        parent=styles['Normal'],
-        fontSize=9,
-        leading=12
-    )
-    for i in range(1, len(contest_table_rows)):
-        contest_table_rows[i][1] = Paragraph(contest_table_rows[i][1], table_style)
     contest_table = Table(contest_table_rows, colWidths=[1*inch, 3*inch, 0.7*inch, 0.7*inch, 0.7*inch])
     contest_table.setStyle(default_table_style)
     return contest_table
