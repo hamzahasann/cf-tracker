@@ -23,6 +23,9 @@ def load_submissions(handle, start_time, end_time) -> List[Submission]:
             rating=problem.get("rating", 0),
             tags=problem["tags"]
         )
+        if "verdict" not in submission:
+            # unjudged due to cf system testing, skip
+            continue
         s = Submission(
             submit_id=submission["id"],
             contest_id=submission["contestId"],
