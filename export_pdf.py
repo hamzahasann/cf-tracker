@@ -135,11 +135,9 @@ def make_overview_table(stats: Dict[str, Any]):
     overview_table.setStyle(default_table_style)
     return overview_table
 
-def make_daily_table(stats: Dict[str, Any], start_date: date, end_date: date):
+def make_daily_table(stats: Dict[str, Any]):
     daily_table_rows = [["Date", "Day of Week", "Problems Solved"]] 
     for date, count in stats["daily_solves"].items():
-        if date < start_date or date > end_date:
-            continue
         daily_table_rows.append([date.strftime("%d %b %Y"),date.strftime("%A"),count])
         daily_table = Table(daily_table_rows, colWidths=[1.5*inch, 2*inch, 2*inch])
         daily_table.setStyle(default_table_style)
@@ -192,7 +190,7 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         elements.append(Spacer(1, 0.2*inch))
         add_section(elements, "Stats Overview", True, make_overview_table, "No stats available for the selected period", stats)
         elements.append(Spacer(1, 0.3*inch))
-        add_section(elements, "Daily Activity", stats["daily_solves"], make_daily_table, "No activity data available for the selected period", stats, start_date, end_date)
+        add_section(elements, "Daily Activity", stats["daily_solves"], make_daily_table, "No activity data available for the selected period", stats)
         elements.append(Spacer(1, 0.3*inch))
         add_section(elements, "Problem Tags", stats["tag_solves"], make_tags_table, "No tag data available", sorted(stats["tag_solves"].items(), key=lambda x: x[1], reverse=True)[:10])
         elements.append(Spacer(1, 0.3*inch))
