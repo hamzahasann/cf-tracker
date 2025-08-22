@@ -46,6 +46,20 @@ custom_styles = {
     "normal": base_styles["Normal"]
 }
 
+default_table_style = TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+    ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+    ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+    ('ALIGN', (2, 0), (4, -1), 'CENTER'),
+    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+    ('TOPPADDING', (0, 1), (-1, -1), 6),
+    ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
+    ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+    ('GRID', (0, 0), (-1, -1), 1, colors.black),
+])
+
 def load_contest_data(handle: str, start_time: int, end_time: int, data_folder: str) -> List[ContestParticipation]:
     with open(f"{data_folder}/{handle}_rating.json", "r") as f:
         contest_participations = json.load(f)
@@ -128,15 +142,7 @@ def make_overview_table(stats: Dict[str, Any]):
         [str(stats["attempted"]), str(stats["solved"]), str(stats["avg_difficulty"]), str(stats["num_contests"])]
     ]
     overview_table = Table(overview_table_rows, colWidths=[2*inch, 2*inch, 2*inch, 2*inch])
-    overview_table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black),
-    ]))
+    overview_table.setStyle(default_table_style)
     return overview_table
 
 def make_daily_table(stats: Dict[str, Any], start_date: date, end_date: date):
@@ -150,15 +156,7 @@ def make_daily_table(stats: Dict[str, Any], start_date: date, end_date: date):
             count
         ])
         daily_table = Table(daily_table_rows, colWidths=[1.5*inch, 2*inch, 2*inch])
-        daily_table.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black),
-        ]))
+        daily_table.setStyle(default_table_style)
     return daily_table
 
 def make_tags_table(tag_solves: List[Tuple[str, int]]):
@@ -166,16 +164,7 @@ def make_tags_table(tag_solves: List[Tuple[str, int]]):
     for tag, count in tag_solves:
         tags_table_rows.append([tag, str(count)])
     tags_table = Table(tags_table_rows, colWidths=[4*inch, 2*inch])
-    tags_table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-        ('ALIGN', (1, 0), (1, -1), 'CENTER'),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black),
-    ]))
+    tags_table.setStyle(default_table_style)
     return tags_table
 
 def make_contest_table(contest_result):
@@ -199,19 +188,7 @@ def make_contest_table(contest_result):
     for i in range(1, len(contest_table_rows)):
         contest_table_rows[i][1] = Paragraph(contest_table_rows[i][1], table_style)
     contest_table = Table(contest_table_rows, colWidths=[1*inch, 3*inch, 0.7*inch, 0.7*inch, 0.7*inch])
-    contest_table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-        ('ALIGN', (2, 0), (4, -1), 'CENTER'),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-        ('TOPPADDING', (0, 1), (-1, -1), 6),
-        ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
-        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black),
-    ]))
+    contest_table.setStyle(default_table_style)
     return contest_table
 
 def add_section(elements, title, make_table_if, make_table_func, fallback_text, *make_table_args):
@@ -248,7 +225,7 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         elements.append(Spacer(1, 0.3*inch))
         add_section(elements, "Contest Participation", stats["contest_result"], make_contest_table, "No contest data available", stats["contest_result"])
         elements.append(PageBreak())
-        
+
     elements.pop() # remove last page break
     doc.build(elements)
 
