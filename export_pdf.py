@@ -247,8 +247,9 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         add_section(elements, "Problem Tags", stats["tag_solves"], make_tags_table, "No tag data available", sorted(stats["tag_solves"].items(), key=lambda x: x[1], reverse=True)[:10])
         elements.append(Spacer(1, 0.3*inch))
         add_section(elements, "Contest Participation", stats["contest_result"], make_contest_table, "No contest data available", stats["contest_result"])
-        if result != results[-1]:
-            elements.append(PageBreak())
+        elements.append(PageBreak())
+        
+    elements.pop() # remove last page break
     doc.build(elements)
 
 def compute_stats(submissions: List[Submission], contest_participations: List[ContestParticipation]) -> Dict[str, Any]:
