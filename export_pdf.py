@@ -1,6 +1,6 @@
 import json
 import sys
-from datetime import datetime
+from datetime import date, datetime
 import pytz
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
@@ -12,8 +12,9 @@ from reportlab.platypus.frames import Frame
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
 from utils import dict_to_model, get_contest_timestamp, load_users, convert_to_unix_time
 from structs import Submission, Problem, ContestParticipation
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
+styles = getSampleStyleSheet()
 pakistan_tz = pytz.timezone("Asia/Karachi")
 USER_FILE = "users.txt"
 DATA_FOLDER = "data"
@@ -44,7 +45,7 @@ def load_submissions(handle: str, start_time: int, end_time: int, data_folder: s
         result.append(s)
     return result
     
-def get_daily_activity(stats, start_date, end_date):
+def get_daily_activity(stats, start_date: date, end_date):
     result = []
     for date, count in stats["daily_solves"].items():
         if date < start_date or date > end_date:
@@ -94,6 +95,98 @@ class PDFWithFooter(BaseDocTemplate):
         
         canvas.restoreState()
 
+def make_overview_table(stats: Dict[str, Any]):
+    overview_table_rows = [
+        ["Problems Attempted", "Problems Solved", "Average Difficulty", "Contests Participated"],
+        [str(stats["attempted"]), str(stats["solved"]), str(stats["avg_difficulty"]), str(stats["num_contests"])]
+    ]
+    overview_table = Table(overview_table_rows, colWidths=[2*inch, 2*inch, 2*inch, 2*inch])
+    overview_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+    ]))
+    return overview_table
+
+def make_daily_table(stats: Dict[str, Any], start_date: date, end_date: date):
+    daily_table_rows = [["Date", "Day of Week", "Problems Solved"]] 
+    for date, count in stats["daily_solves"].items():
+        if date < start_date or date > end_date:
+            continue
+        daily_table_rows.append([
+            date.strftime("%d %b %Y"),
+            date.strftime("%A"),
+            count
+        ])
+        daily_table = Table(daily_table_rows, colWidths=[1.5*inch, 2*inch, 2*inch])
+        daily_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ]))
+    return daily_table
+
+def make_tags_table(tag_solves: List[Tuple[str, int]]):
+    tags_table_rows = [["Tag", "Count"]]
+    for tag, count in tag_solves:
+        tags_table_rows.append([tag, str(count)])
+    tags_table = Table(tags_table_rows, colWidths=[4*inch, 2*inch])
+    tags_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('ALIGN', (1, 0), (1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+    ]))
+    return tags_table
+
+def make_contest_table(contest_result):
+    contest_table_rows = [["Date", "Contest", "Rank", "Rating", "Change"]]
+    for c in contest_result:
+        rating_change = c.newRating - c.oldRating
+        change_text = f"+{rating_change}" if rating_change > 0 else str(rating_change)
+        contest_table_rows.append([
+            datetime.fromtimestamp(c.timestamp, tz=pakistan_tz).strftime("%b %d %H:%M"),
+            c.contestName,
+            str(c.rank),
+            str(c.newRating),
+            change_text
+        ])
+    table_style = ParagraphStyle(
+        'TableContent',
+        parent=styles['Normal'],
+        fontSize=9,
+        leading=12
+    )
+    for i in range(1, len(contest_table_rows)):
+        contest_table_rows[i][1] = Paragraph(contest_table_rows[i][1], table_style)
+    contest_table = Table(contest_table_rows, colWidths=[1*inch, 3*inch, 0.7*inch, 0.7*inch, 0.7*inch])
+    contest_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('ALIGN', (2, 0), (4, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('TOPPADDING', (0, 1), (-1, -1), 6),
+        ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+    ]))
+    return contest_table
+
 def generate_pdf_report(results, start_date, end_date, output_filename):
     date_range_text = f"{start_date.strftime('%d/%m/%Y')} - {end_date.strftime('%d/%m/%Y')}"
     footer_text = "This report was automatically generated and is for informational purposes only."
@@ -108,9 +201,7 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         topMargin=0.5*inch,
         bottomMargin=0.75*inch
     )
-    
-    styles = getSampleStyleSheet()
-    
+        
     title_style = ParagraphStyle(
         'Title',
         parent=styles['Heading1'],
@@ -145,123 +236,31 @@ def generate_pdf_report(results, start_date, end_date, output_filename):
         elements.append(Paragraph(f"CF: {handle}", subtitle_style))
         elements.append(Spacer(1, 0.2*inch))
         elements.append(Paragraph("Stats Overview", section_style))
-        stats_data = [
-            ["Problems Attempted", "Problems Solved", "Average Difficulty", "Contests Participated"],
-            [
-                str(stats["attempted"]),
-                str(stats["solved"]),
-                str(stats["avg_difficulty"]),
-                str(stats["num_contests"])
-            ]
-        ]
-        stats_table = Table(stats_data, colWidths=[2*inch, 2*inch, 2*inch, 2*inch])
-        stats_table.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black),
-        ]))
-        elements.append(stats_table)
-        elements.append(Spacer(1, 0.3*inch))
-        # Daily Activity
-        elements.append(Paragraph("Daily Activity", section_style))
 
+        elements.append(make_overview_table(stats))
+        
+        elements.append(Spacer(1, 0.3*inch))
+
+        elements.append(Paragraph("Daily Activity", section_style))
         if stats["daily_solves"]:
-            daily_table = [["Date", "Day of Week", "Problems Solved"]] 
-            for date, count in stats["daily_solves"].items():
-                if date < start_date or date > end_date:
-                    continue
-                daily_table.append([
-                    date.strftime("%d %b %Y"),
-                    date.strftime("%A"),
-                    count
-                ])
-                activity_table = Table(daily_table, colWidths=[1.5*inch, 2*inch, 2*inch])
-                activity_table.setStyle(TableStyle([
-                    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                    ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-                    ('GRID', (0, 0), (-1, -1), 1, colors.black),
-                ]))
-            elements.append(activity_table)
+            elements.append(make_daily_table(stats, start_date, end_date))
         else:
             elements.append(Paragraph("No activity data available for the selected period", normal_style))
+
         elements.append(Spacer(1, 0.3*inch))
 
         elements.append(Paragraph("Problem Tags", section_style))
-        tags = sorted(
-            stats["tag_solves"].items(), 
-            key=lambda x: x[1], 
-            reverse=True
-        )[:10]
-        if tags:
-            tag_data = [["Tag", "Count"]]
-            for tag, count in tags:
-                tag_data.append([tag, str(count)])
-            
-            tag_table = Table(tag_data, colWidths=[4*inch, 2*inch])
-            tag_table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                ('ALIGN', (1, 0), (1, -1), 'CENTER'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black),
-            ]))
-            
-            elements.append(tag_table)
+        if stats["tag_solves"]:
+            tag_solves_sorted = sorted(stats["tag_solves"].items(), key=lambda x: x[1], reverse=True)[:10]
+            elements.append(make_tags_table(tag_solves_sorted))
         else:
             elements.append(Paragraph("No tag data available", normal_style))
         
         elements.append(Spacer(1, 0.3*inch))
         
-        # Contest participation
         elements.append(Paragraph("Contest Participation", section_style))
-        contest_result = stats["contest_result"]
-
-        if contest_result:
-            contest_activity_table = [["Date", "Contest", "Rank", "Rating", "Change"]]
-            for c in contest_result:
-                rating_change = c.newRating - c.oldRating
-                change_text = f"+{rating_change}" if rating_change > 0 else str(rating_change)
-                contest_activity_table.append([
-                    datetime.fromtimestamp(c.timestamp, tz=pakistan_tz).strftime("%b %d %H:%M"),
-                    c.contestName,
-                    str(c.rank),
-                    str(c.newRating),
-                    change_text
-                ])
-            table_style = ParagraphStyle(
-                'TableContent',
-                parent=styles['Normal'],
-                fontSize=9,
-                leading=12
-            )
-            for i in range(1, len(contest_activity_table)):
-                contest_activity_table[i][1] = Paragraph(contest_activity_table[i][1], table_style)
-            contest_table = Table(contest_activity_table, colWidths=[1*inch, 3*inch, 0.7*inch, 0.7*inch, 0.7*inch])
-            contest_table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                ('ALIGN', (2, 0), (4, -1), 'CENTER'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('TOPPADDING', (0, 1), (-1, -1), 6),
-                ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
-                ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-                ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black),
-            ]))
-            elements.append(contest_table)
+        if stats["contest_result"]:
+            elements.append(make_contest_table(stats["contest_result"]))
         else:
             elements.append(Paragraph("No contest data available", normal_style))
 
